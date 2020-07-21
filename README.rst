@@ -38,7 +38,7 @@ Verifying Installation
         
         $ mv silver.crf models/silver.crf
         
-        $ cliner predict --txt data/examples/ex_doc.txt --out data/predictions --model models/silver.crf --format i2b2
+        $ python cliner predict --txt data/examples/ex_doc.txt --out data/predictions --model models/silver.crf --format i2b2
 
 If you *do not* run into build errors, then your installation is complete.
 
@@ -66,13 +66,13 @@ Here are some use cases:
 
 This help message will list the options available to run (train/predict/evaluate)
 
-    cliner --help
+    python cliner --help
 
 (2) Training
 
 These examples demonstrate how to build a CliNER model which can then be used for predicting concepts in text files.
 
-    cliner train --txt data/examples/ex_doc.txt --annotations data/examples/ex_doc.con --format i2b2 --model models/foo.model
+    python cliner train --txt data/examples/ex_doc.txt --annotations data/examples/ex_doc.con --format i2b2 --model models/foo.model
 
 This example trains a very simple CliNER model. The (pretend.txt, pretend.con) pair form as the only document for learning to identify concepts. We must specify that these files are i2b2 format (even though the .con extension implies i2b2 format, you can never be too careful). The CliNER model is then serialized to models/foo.model as specified.
 
@@ -82,7 +82,7 @@ This example trains a very simple CliNER model. The (pretend.txt, pretend.con) p
 
 Once your CliNER model is built, you can use it to predict concepts in text files.
 
-    cliner predict --txt data/examples/ex_doc.txt --out data/test_predictions/ --format i2b2 --model models/foo.model
+    python cliner predict --txt data/examples/ex_doc.txt --out data/test_predictions/ --format i2b2 --model models/foo.model
 
 In this example, we use the models/foo.model CliNER model that we built up above. This model is used to predict concepts in i2b2 format for the "ex_doc.txt" file. This generates a file named "ex_doc.con" and stores it in the specified output directory.
 
@@ -90,7 +90,7 @@ In this example, we use the models/foo.model CliNER model that we built up above
 
 This allows us to evaluate how well CliNER does by comparing it against a gold standard.
 
-    cliner evaluate --txt data/examples/ex_doc.txt --gold examples --predictions data/test_predictions/ --format i2b2
+    python cliner evaluate --txt data/examples/ex_doc.txt --gold examples --predictions data/test_predictions/ --format i2b2
 
 Evaluate how well the system predictions did. Both sets of data must be in the same format, and that format must be specified. This means that both the examples and data/test_predictions directories contain the file pretend.con.
 
