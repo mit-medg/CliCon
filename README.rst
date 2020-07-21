@@ -72,7 +72,7 @@ This help message will list the options available to run (train/predict/evaluate
 
 These examples demonstrate how to build a CliNER model which can then be used for predicting concepts in text files.
 
-    cliner train --txt data/examples/ex_doc.txt --annotations data/examples/ex_doc.con --format i2b2 --model models/foo.model
+    python cliner train --txt data/examples/ex_doc.txt --annotations data/examples/ex_doc.con --format i2b2 --model models/foo.model
 
 This example trains a very simple CliNER model. The (pretend.txt, pretend.con) pair form as the only document for learning to identify concepts. We must specify that these files are i2b2 format (even though the .con extension implies i2b2 format, you can never be too careful). The CliNER model is then serialized to models/foo.model as specified.
 
