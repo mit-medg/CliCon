@@ -38,7 +38,7 @@ Verifying Installation
         
         $ mv silver.crf models/silver.crf
         
-        $ cliner predict --txt data/examples/ex_doc.txt --out data/predictions --model models/silver.crf --format i2b2
+        $ python cliner predict --txt data/examples/ex_doc.txt --out data/predictions --model models/silver.crf --format i2b2
 
 If you *do not* run into build errors, then your installation is complete.
 
