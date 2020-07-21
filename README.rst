@@ -66,7 +66,7 @@ Here are some use cases:
 
 This help message will list the options available to run (train/predict/evaluate)
 
-    cliner --help
+    python cliner --help
 
 (2) Training
 
