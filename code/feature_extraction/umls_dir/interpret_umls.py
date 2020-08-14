@@ -189,8 +189,8 @@ def get_tui( cache, cuiStr ):
 
 # Get the umls concept id for a given word
 def get_cui( cache , word ):
-    if word != "blood":
-        return []
+#     if word != "blood":
+#         return []
     # If already in cache
     if cache.has_key( word + '--cuis' ):
 
